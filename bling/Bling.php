@@ -31,7 +31,7 @@ class Bling
 
     public function executeGetProduct($code){
         if ($code != ""){
-            $url = $this->host.'produto/' . $code . '/' . $this->outputType.'&apikey=' . $this->apiKey;
+            $url = $this->host.'produto/' . $code . '/' . $this->outputType.'?estoque=S&apikey=' . $this->apiKey;
             //echo $url;
             $response = $this->transfer($url);
             $response = $response->retorno->produtos[0]->produto;
